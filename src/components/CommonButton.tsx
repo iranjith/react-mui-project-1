@@ -8,12 +8,13 @@ interface Props {
   disabled: boolean;
   size: "small" | "medium" | "large";
   sx?: any;
+  onClick?: () => void;
 }
 
-const CommonButton = ({ children, color, variant, size, disabled, sx }: Props) => {
+const CommonButton = ({ children, color, variant, size, disabled, sx, onClick }: Props) => {
   return (
     <>
-      <Button variant={variant} color={color} size={size} disabled={disabled} sx={sx}>
+      <Button variant={variant} color={color} size={size} disabled={disabled} sx={sx} onClick={onClick}>
         {children}
       </Button>
     </>

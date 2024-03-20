@@ -3,6 +3,8 @@ import NavBar from "../components/NavBar";
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
+import BasicCard from "../components/BasicCard";
+import { gridWrapperStyles } from "../styles/gridStyles";
 
 const Layout = () => {
   const [title, setTitle] = useState("");
@@ -14,7 +16,7 @@ const Layout = () => {
 
   return (
     <>
-      <Grid container>
+      <Grid container sx={gridWrapperStyles}>
         <NavBar></NavBar>
         <Header title={title}></Header>
         <Outlet></Outlet>
