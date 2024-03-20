@@ -1,9 +1,9 @@
-import React from "react";
 import Button from "@mui/material/Button";
+import React from "react";
 
 interface Props {
   children: React.ReactNode;
-  color: "primary" | "secondary" | "success" | "error" | "info" | "warning";
+  color:"primary" | "secondary" | "error" | "info" | "success" | "warning";
   variant: "contained" | "outlined" | "text";
   disabled: boolean;
   size: "small" | "medium" | "large";
