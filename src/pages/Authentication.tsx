@@ -1,11 +1,9 @@
-import Grid from "@mui/material/Grid";
-import Header from "../components/Header";
+import { Grid } from "@mui/material";
 
 const Authentication = () => {
   return (
     <>
       <Grid item xs={8}>
-          <Header></Header>
       </Grid>
     </>
   );
