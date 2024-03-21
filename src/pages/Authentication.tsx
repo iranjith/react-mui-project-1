@@ -1,22 +1,35 @@
-import { Box, Grid, IconButton, Typography } from "@mui/material";
-import BasicCard from "../components/BasicCard";
-import SearchBar from "../components/SearchBar";
-import { ChangeEvent, useRef } from "react";
-import { gridWrapperStyles } from "../styles/gridStyles";
-import { cardHeaderStyles } from "../styles/cardStyles";
-import CommonButton from "../components/CommonButton";
 import { RefreshOutlined } from "@mui/icons-material";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
+import { useState } from "react";
+import BasicCard from "../components/BasicCard";
+import BasicModal from "../components/BasicModal";
+import CommonButton from "../components/CommonButton";
+import SearchBar from "../components/SearchBar";
+import { cardHeaderStyles } from "../styles/cardStyles";
+import { gridWrapperStyles } from "../styles/gridStyles";
+import NewUserModal from "../components/NewUserModal";
+
+
 
 const Authentication = () => {
 
-  const ref=useRef<HTMLInputElement>(null);
+  const [open, setOpen] = useState(false);
+
+  //const ref=useRef<HTMLInputElement>(null);
+
+  const handleModalClose =()=>{
+    setOpen(false);
+  }
+
 
   const getHeader = () => {
     const handleChange = (value: string) => {
       console.log(value);
     };
 
+ 
     const addUser = () => {
+      setOpen(true);
       console.log("click");
     };
     return (
@@ -64,6 +77,8 @@ const Authentication = () => {
           header= {getHeader()}
           content={getContent()}
         ></BasicCard>
+        <NewUserModal modalOpen={open} onClose={handleModalClose} addNewUser={function (data: { userId: string; email: string; phoneNumber: string; }): void {
+          } } />
       </Grid>
     </>
   );

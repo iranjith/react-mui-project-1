@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
   color:"primary" | "secondary" | "error" | "info" | "success" | "warning";
   variant: "contained" | "outlined" | "text";
-  disabled: boolean;
+  disabled?: boolean;
   size: "small" | "medium" | "large";
   sx?: any;
   onClick?: () => void;
